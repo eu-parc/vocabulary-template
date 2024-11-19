@@ -1,4 +1,4 @@
-name: Test Publish Vocabulary Workflow
+name: Publish Vocabulary
 
 on:
     pull_request:
@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-    test-workflow:
+    publish-vocabulary:
         if: github.repository != 'eu-parc/vocabulary-template'
         uses: eu-parc/voc2skosmos-workflows/.github/workflows/csv2skos.yml@main
         with:
