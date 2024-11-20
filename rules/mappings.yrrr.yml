@@ -3,3 +3,6 @@ prefixes:
 
 
 mappings:
+  resource:
+    sources:
+      - ['data/data.csv~csv']
