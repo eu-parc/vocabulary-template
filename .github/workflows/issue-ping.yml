@@ -1,0 +1,28 @@
+name: Issue Ping Bot
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run the ping script
+      run: |
+        python3 .github/workflows/scripts/pingbot.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
