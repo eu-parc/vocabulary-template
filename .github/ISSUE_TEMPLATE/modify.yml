@@ -12,7 +12,7 @@ body:
       value: |
         Thanks for taking the time to fill out this vocabulary term modification form!
 
-        Please provide the necessary details about the vocabulary term, including its unique identifier and all relevant fields that need to be modified.
+        Please provide the necessary details about the vocabulary term. Don't forget to include the term URI, and only provide info on those fields that you would want to see changed.
   
   - type: input
     id: id

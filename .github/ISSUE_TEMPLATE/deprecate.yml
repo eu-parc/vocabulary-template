@@ -30,7 +30,7 @@ body:
       description: The consie and unique, human-readable name for the matrix.
       placeholder: ex. example_voc_term
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: description
