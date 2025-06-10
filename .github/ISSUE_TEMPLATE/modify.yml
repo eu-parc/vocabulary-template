@@ -1,25 +1,25 @@
-name: Request new vocabulary term.
+name: Request modifications to an existing vocabulary term.
 
-description: Add metadata about a new vocabulary term.
+description: Provide details about the vocabulary term that requires modification.
 
-title: Add vocabulary term [X]
+title: Modify vocabulary term [X]
 
-labels: [ New, VocabularyTerm ]
+labels: [ Modify, VocabularyTerm ]
 
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this new vocabulary term request form!
+        Thanks for taking the time to fill out this vocabulary term modification form!
 
-        Please provide the necessary details about the vocabulary term, including its unique identifier, name, description, and relevant hierarchy information.
+        Please provide the necessary details about the vocabulary term, including its unique identifier and all relevant fields that need to be modified.
   
   - type: input
     id: id
     attributes:
-      label: vocabulary term URI
+      label: Vocabulary term URI
       description: Unique resource identifier for the vocabulary term.
-      placeholder: ex. peh:MA-0012abxy74
+      placeholder: ex. peh:MA-0014ab7741xt
     validations:
       required: true
 
@@ -27,25 +27,25 @@ body:
     id: unique_name
     attributes:
       label: Unique Name
-      description: A unique, human-readable name for the vocabulary term.
-      placeholder: ex. example_vocabulary_term
+      description: A unique, human-readable name for the matrix.
+      placeholder: ex. example_matrix
     validations:
-      required: true
+      required: false
 
   - type: input
     id: name
     attributes:
       label: Name
-      description: The official name of the vocabulary term.
-      placeholder: ex. Example vocabulary term
+      description: The official name of the matrix.
+      placeholder: ex. Example Matrix
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Provide a brief description of the vocabulary term.
+      description: Provide a brief description of the matrix.
     validations:
       required: false
 
@@ -53,7 +53,7 @@ body:
     id: label
     attributes:
       label: Label
-      description: A concise label for the vocabulary term.
+      description: A concise label for the matrix.
       placeholder: ex. Example Label
     validations:
       required: false
@@ -62,7 +62,7 @@ body:
     id: remark
     attributes:
       label: Remark
-      description: Any additional notes or remarks regarding the vocabulary term.
+      description: Any additional notes or remarks regarding the matrix.
     validations:
       required: false
 
@@ -82,7 +82,7 @@ body:
           translated_value: Traduction Exemple
         ```
       placeholder: |
-        - property_name: vocabulary term_property
+        - property_name: matrix_property
           language: en
           translated_value: Example Translation
     validations:
