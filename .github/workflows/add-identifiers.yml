@@ -15,7 +15,7 @@ jobs:
         with:
             ref: ${{ github.ref }}
             data: data/data.yaml
-            target_name: #[ADD HERE]
+            target_name: #[ADD LINKML SLOT OF CONTAINER CLASS HERE]
             # parent_key: parent_matrix: OPTIONAL
             preflabel: label
             type_prefix: #[ADD identifier prefix]
@@ -78,8 +78,9 @@ jobs:
       with:
         ref: ${{ github.ref }}
         namespace: https://w3id.org/peh/terms/
-        namespace_label: pehterms
         linkml_schema: https://raw.githubusercontent.com/eu-parc/parco-hbm/main/linkml/schema/peh.yaml
         artefact_name: data-with-id.yaml
+        voc_uri: https://w3id.org/peh/resource # modify
+        entity_name: Resource # modify to appropriate linkml class
       secrets:
-            token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
