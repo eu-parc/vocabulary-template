@@ -1,0 +1,5 @@
+resources:
+- id: https://example.com/first
+  label: first example
+  name: first example
+  unique_name: FE

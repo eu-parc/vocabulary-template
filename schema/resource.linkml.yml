@@ -14,13 +14,22 @@ prefixes:
 default_prefix: ##
 
 classes:
-  ##:
+  NamedThing:
+    abstract: true
+    description: >-
+      An abstract model for any of the identifiable entities
+    slots:
+      - id
+      - unique_name
+      - name
+      - description
+      - label
+      - remark
+    close_mappings:
+     - schema:Thing
     class_uri: skos:Concept
     mixins:
       - HasTranslations
-    slots:
-      - id
-      - ## add      
 
   HasTranslations:
     class_uri: thesoz:hasTranslation
@@ -34,16 +43,37 @@ classes:
       - translated_value
   Data:
     tree_root: true
-    attributes:
-      ## add
-        multivalued: true
-        inlined_as_list: true
-        range: ##
+    description: >-
+      A generic top level object for collecting the resources in the vocabulary
+    slots:
+      - named_things
 
 slots:
   id:
     identifier: true
     slot_uri: schema:identifier
+  unique_name:
+    slot_uri: schema:alternateName
+    exact_mappings:
+    - skos:altLabel
+    close_mappings:
+    - schema:identifier
+  name:
+    slot_uri: schema:name
+    exact_mappings:
+    - skos:altLabel
+  description:
+    slot_uri: schema:description
+    exact_mappings:
+    - skos:definition
+  label:
+    slot_uri: skos:prefLabel
+    exact_mappings:
+    - schema:alternateName
+  remark:
+    slot_uri: schema:comment
+    exact_mappings:
+    - skos:note
   
   translations:
     multivalued: true
@@ -52,3 +82,7 @@ slots:
   property_name:
   language:
   translated_value:
+  named_things:
+    multivalued: true
+    inlined_as_list: true
+    range: NamedThing

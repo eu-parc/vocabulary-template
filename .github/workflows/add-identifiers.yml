@@ -17,7 +17,7 @@ jobs:
             data: data/data.yaml
             target_name: #[ADD LINKML SLOT OF CONTAINER CLASS HERE]
             # parent_key: parent_matrix: OPTIONAL
-            preflabel: label
+            preflabel: unique_name
             type_prefix: #[ADD identifier prefix]
             namespace: https://w3id.org/peh/
             artefact_name: data-with-id.yaml
