@@ -23,7 +23,6 @@ classes:
       - unique_name
       - name
       - description
-      - label
       - remark
     close_mappings:
      - schema:Thing
