@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/example/vocabulary/schema/dropbox.schema.json",
+  "title": "Vocabulary dropbox file",
+  "description": "Contract for a dropbox/*.yaml file proposing one or more vocabulary terms. Derived vocabularies should specialize the field names and descriptions to match their LinkML schema.",
+  "type": "object",
+  "required": ["terms"],
+  "additionalProperties": false,
+  "properties": {
+    "suggester": {
+      "$ref": "#/$defs/orcid",
+      "description": "File-level default suggester. Applied to every entry that does not set its own suggester."
+    },
+    "terms": {
+      "type": "array",
+      "description": "The list of proposed terms. This key should match TARGET_CLASS in the Makefile.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/term"
+      }
+    }
+  },
+  "$defs": {
+    "orcid": {
+      "type": "string",
+      "description": "Canonical ORCID URL, for example https://orcid.org/0000-0002-1825-0097.",
+      "pattern": "^https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Subject IRI, CURIE, or local identifier. Optional for new terms; generated during minting when absent."
+        },
+        "name": {
+          "type": "string",
+          "description": "Preferred human-readable label."
+        },
+        "description": {
+          "type": "string",
+          "description": "Free-text definition or description."
+        },
+        "aliases": {
+          "type": "array",
+          "description": "Alternative labels.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exact_matches": {
+          "type": "array",
+          "description": "External identifiers equivalent to this term.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent_terms": {
+          "type": "array",
+          "description": "Broader or parent term identifiers.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "suggester": {
+          "$ref": "#/$defs/orcid",
+          "description": "Per-entry suggester. Overrides file-level suggester."
+        }
+      }
+    }
+  }
+}

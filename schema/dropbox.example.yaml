@@ -1,0 +1,23 @@
+# Example dropbox file.
+# Copy a trimmed-down version of this into dropbox/ and open a pull request.
+
+# Optional file-level default suggester (ORCID). Applied to entries that do not
+# set their own suggester.
+suggester: https://orcid.org/0000-0002-1825-0097
+
+terms:
+  - name: example root term
+    description: A concise definition of the proposed term.
+    parent_terms:
+      - https://w3id.org/example/terms/RootTerm
+    exact_matches:
+      - https://example.org/external/EXAMPLE_001
+
+  - id: example-child-term
+    name: example child term
+    description: A second term with an explicit local identifier.
+    parent_terms:
+      - https://w3id.org/example/vocabulary/example-root-term
+    aliases:
+      - child example
+    suggester: https://orcid.org/0000-0001-5109-3700

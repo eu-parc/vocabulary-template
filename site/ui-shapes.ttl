@@ -1,0 +1,5 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# Optional UI shapes for a vocabulary browser.
+# Derived repositories can replace this with shapes tailored to their data.

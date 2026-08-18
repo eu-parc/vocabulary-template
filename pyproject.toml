@@ -1,0 +1,14 @@
+[project]
+name = "vocabulary-template"
+version = "0.0.1"
+description = "Template for PR-curated vocabularies published as nanopublications"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "linkml",
+    "pubmate",
+    "python-ulid==3.1.0",
+]
+
+[tool.uv.sources]
+pubmate = { git = "https://github.com/eu-parc/pubmate.git", tag = "v0.2.2" }
